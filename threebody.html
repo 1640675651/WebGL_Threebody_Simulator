@@ -1,0 +1,42 @@
+<!DOCTYPE HTML> 
+<html lang="en"> 
+<head>
+<title>Three-body simulation</title>
+<meta charset="utf-8"> 
+</head>
+
+
+ 
+<body>
+  <canvas id="canvas" width="500" height="500"></canvas><br>
+  <input type="checkbox" name="showframecouter" id="sfc" onclick="showframecounter()">Show framecounter: <output name="framecounter" id="fc" style="display:none"></output><br>
+  Camera distance from the origin:<input type="number", id="cd" name="camera_distance"><br>
+  Initial position of the first object (in the form x y z):<input type="number", id="x0" name="x0"><input type="number", id="y0" name="y0"><input type="number", id="z0" name="z0"><br>
+  Initial position of the second object (in the form x y z):<input type="number", id="x1" name="x1"><input type="number", id="y1" name="y1"><input type="number", id="z1" name="z1"><br>
+  Initial position of the third object (in the form x y z):<input type="number", id="x2" name="x2"><input type="number", id="y2" name="y2"><input type="number", id="z2" name="z2"><br>
+  Initial velocity of the first object (in the form vx vy vz):<input type="number", id="vx0" name="vx0"><input type="number", id="vy0" name="vy0"><input type="number", id="vz0" name="vz0"><br>
+  Initial velocity of the second object (in the form vx vy vz):<input type="number", id="vx1" name="vx1"><input type="number", id="vy1" name="vy1"><input type="number", id="vz1" name="vz1"><br>
+  Initial velocity of the third object (in the form vx vy vz):<input type="number", id="vx2" name="vx2"><input type="number", id="vy2" name="vy2"><input type="number", id="vz2" name="vz2"><br>
+  Mass of the first object:<input type="number", id="m0" name="m0"><br>
+  Mass of the second object:<input type="number", id="m1" name="m1"><br>
+  Mass of the third object:<input type="number", id="m2" name="m2"><br>
+  Gravitational constant G:<input type="number", id="G" name="G"><br>
+  Radius of the first object:<input type="number", id="R0" name="R0"><br>
+  Radius of the second object:<input type="number", id="R1" name="R1"><br>
+  Radius of the third object:<input type="number", id="R2" name="R2"><br>
+  Time interval dt per frame:<input type="number", id="dt" name="dt"><br>
+  <input type="button" id="setval" value="set values" onclick="setval()">
+  <input type="button" id="ss" value="use special solution (circular motion)" onclick="setss()">
+  <input type="button" id="sje" value="Sun, Jupiter and Earth (scaled)" onclick="setsje()">
+  <input type="button" id="startbtn" value="start" onclick="start()" disabled>
+  <input type="button" id="pausebtn" value="pause" onclick="pause()" disabled>
+</body>
+
+<script src="gl-matrix-min.js"></script>
+<script src="webgl-utils.js"></script>
+<script src="trackball-rotator.js"></script>
+<script src="sphere.js"></script>
+<script src="threebody.js"></script>  
+<script src="ui.js"></script>  
+
+</html>
